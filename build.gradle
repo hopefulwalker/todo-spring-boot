@@ -17,7 +17,13 @@ apply from: "$rootDir/gradle/code-analysis.gradle"
 apply from: "$rootDir/gradle/deploy.gradle"
 
 repositories {
-    mavenCentral()
+    maven {
+        url "http://192.168.56.216/artifactory/gradle-dev"
+        credentials {
+            username = "admin"
+            password = "password"
+        }            
+    }    
 }
 
 dependencies {
